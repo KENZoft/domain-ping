@@ -1,6 +1,6 @@
 {
   "name": "domain-ping",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "A small Node.js module that attempts to ping a domain",
   "keywords": [
     "domain",
@@ -13,9 +13,9 @@
   "main": "domain-ping.js",
   "license": "MIT",
   "author": {
-    "name": "Ricardo Nunes",
-    "email": "ricardonunesdev@gmail.com",
-    "url": "https://github.com/ricardonunesdev"
+    "name": "Niclas Käld",
+    "email": "niclas.kald@gmail.com",
+    "url": "https://github.com/KENZoft"
   },
   "scripts": {
     "test": "mocha --reporter spec --recursive --timeout 30000",
@@ -37,13 +37,14 @@
     "istanbul": "^0.4.5",
     "mocha": "^3.5.3"
   },
-  "homepage": "https://github.com/ricardonunesdev/domain-ping#readme",
+  "homepage": "https://github.com/KENZoft/domain-ping#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ricardonunesdev/domain-ping"
+    "url": "https://github.com/KENZoft/domain-ping",
+    "forked-from": "https://github.com/ricardonunesdev/domain-ping"
   },
   "bugs": {
-    "email": "ricardonunesdev@gmail.com",
-    "url": "https://github.com/ricardonunesdev/domain-ping/issues"
+    "email": "niclas.kald@gmail.com",
+    "url": "https://github.com/KENZoft/domain-ping/issues"
   }
 }

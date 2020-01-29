@@ -40,7 +40,10 @@ const requestUrl = (url) => {
     });
 };
 
-const requestDomain = (domain) => {
+const requestDomain = (domain, port) => {
+    if(port) {
+        domain += ':' + port;
+    }
     return new Promise((resolve, reject) => {
         requestUrl('http://' + domain)
             .then(resolve)
@@ -52,10 +55,11 @@ const requestDomain = (domain) => {
     });
 };
 
-const domainPing = (domain) => {
+const domainPing = (domain, port) => {
     return new Promise((resolve, reject) => {
         let data = {
-            domain: domain
+            domain: domain,
+            port: port
         };
 
         if (!isValidDomain(domain)) {
@@ -64,7 +68,6 @@ const domainPing = (domain) => {
             debugErr(data.error);
             return reject(data);
         }
-
         getDomainIp(domain)
             .then((ip) => {
                 data.ip = ip;
@@ -72,7 +75,7 @@ const domainPing = (domain) => {
             })
             .then((alive) => {
                 data.ping = alive;
-                return requestDomain(domain);
+                return requestDomain(domain, data.port);
             })
             .then((statusCode) => {
                 data.success = true;
